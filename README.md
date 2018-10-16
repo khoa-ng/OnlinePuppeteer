@@ -1,22 +1,22 @@
-# Rendertron [![Build status](https://travis-ci.org/GoogleChrome/rendertron.svg?branch=master)](https://travis-ci.org/GoogleChrome/rendertron) [![NPM rendertron package](https://img.shields.io/npm/v/rendertron.svg)](https://npmjs.org/package/rendertron)
+# KhoaPuppeteer [![Build status](https://travis-ci.org/GoogleChrome/KhoaPuppeteer.svg?branch=master)](https://travis-ci.org/GoogleChrome/KhoaPuppeteer) [![NPM KhoaPuppeteer package](https://img.shields.io/npm/v/KhoaPuppeteer.svg)](https://npmjs.org/package/KhoaPuppeteer)
 
-> Rendertron is a headless Chrome rendering solution designed to render & serialise web pages on the fly.
+> KhoaPuppeteer is a headless Chrome rendering solution designed to render & serialise web pages on the fly.
 
 #### :hammer: Built with [Puppeteer](https://github.com/GoogleChrome/puppeteer)
 #### :cloud: Easy deployment to Google Cloud
 #### :mag: Improves SEO
 
-Rendertron is designed to enable your Progressive Web App (PWA) to serve the correct
-content to any bot that doesn't render or execute JavaScript. Rendertron runs as a
-standalone HTTP server. Rendertron renders requested pages using Headless Chrome,
+KhoaPuppeteer is designed to enable your Progressive Web App (PWA) to serve the correct
+content to any bot that doesn't render or execute JavaScript. KhoaPuppeteer runs as a
+standalone HTTP server. KhoaPuppeteer renders requested pages using Headless Chrome,
 [auto-detecting](#auto-detecting-loading-function) when your PWA has completed loading
-and serializes the response back to the original request. To use Rendertron, your application
-configures [middleware](#middleware) to determine whether to proxy a request to Rendertron.
-Rendertron is compatible with all client side technologies, including [web components](#web-components).
+and serializes the response back to the original request. To use KhoaPuppeteer, your application
+configures [middleware](#middleware) to determine whether to proxy a request to KhoaPuppeteer.
+KhoaPuppeteer is compatible with all client side technologies, including [web components](#web-components).
 
 **Demo endpoint**
 
-A demo Rendertron service is available at https://render-tron.appspot.com/. It is not designed
+A demo KhoaPuppeteer service is available at https://render-tron.appspot.com/. It is not designed
 to be used as a production endpoint. You can use it, but there are no uptime guarantees.
 
 ## Contents
@@ -42,12 +42,12 @@ to be used as a production endpoint. You can use it, but there are no uptime gua
 Once you have the service up and running, you'll need to implement the differential serving
 layer. This checks the user agent to determine whether prerendering is required.
 
-This is a list of middleware available to use with the Rendertron service:
+This is a list of middleware available to use with the KhoaPuppeteer service:
  * [Express.js middleware](/middleware)
  * [Firebase functions](https://github.com/justinribeiro/pwa-firebase-functions-botrender) (Community maintained)
- * [ASP.net core middleware](https://github.com/galamai/AspNetCore.Rendertron) (Community maintained)
+ * [ASP.net core middleware](https://github.com/galamai/AspNetCore.KhoaPuppeteer) (Community maintained)
 
-Rendertron is also compatible with [prerender.io middleware](https://prerender.io/documentation/install-middleware).
+KhoaPuppeteer is also compatible with [prerender.io middleware](https://prerender.io/documentation/install-middleware).
 Note: the user agent lists differ there.
 
 ## API
@@ -107,10 +107,10 @@ is required for web components.
 If you are using web components v0 (deprecated), you will need to enable Shady DOM to
 render correctly. In Polymer 1.x, which uses web components v0, Shady DOM is enabled by default.
 If you are using Shadow DOM, override this by setting the query parameter `dom=shady` when
-directing requests to the Rendertron service.
+directing requests to the KhoaPuppeteer service.
 
 If you are using web components v1 and either `webcomponents-lite.js` or `webcomponents-loader.js`,
-set the query parameter `wc-inject-shadydom=true` when directing requests to the Rendertron
+set the query parameter `wc-inject-shadydom=true` when directing requests to the KhoaPuppeteer
 service. This renderer service will force the necessary polyfills to be loaded and enabled.
 
 ### Status codes
@@ -121,14 +121,14 @@ set the HTTP status returned by the rendering service by adding a meta tag.
 ```
 
 ## Running locally
-To install Rendertron and run it locally, first install Rendertron:
+To install KhoaPuppeteer and run it locally, first install KhoaPuppeteer:
 ```bash
-npm install -g rendertron
+npm install -g KhoaPuppeteer
 ```
 
-With Chrome installed on your machine run the Rendertron CLI:
+With Chrome installed on your machine run the KhoaPuppeteer CLI:
 ```bash
-rendertron
+KhoaPuppeteer
 ```
 
 ## Installing & deploying
@@ -136,8 +136,8 @@ rendertron
 ### Building
 Clone and install dependencies:
 ```bash
-git clone https://github.com/GoogleChrome/rendertron.git
-cd rendertron
+git clone https://github.com/GoogleChrome/KhoaPuppeteer.git
+cd KhoaPuppeteer
 npm install
 npm run build
 ```
@@ -154,7 +154,7 @@ gcloud app deploy app.yaml --project <your-project-id>
 ```
 
 ### Deploying using Docker
-Rendertron no longer includes a Docker file. Instead, refer to
+KhoaPuppeteer no longer includes a Docker file. Instead, refer to
 [Puppeteer documentation](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker)
 on how to deploy run headless Chrome in Docker.
 
